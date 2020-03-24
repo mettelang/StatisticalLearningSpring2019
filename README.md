@@ -6,7 +6,10 @@ The full overview of all learning material in the course is found at https://www
 The textbook for the course was James et al: Introduction to statistical learning, plus an extra module on artificial neural networks. 
 This repo contains my Rmd code for the modules that I have made (not chapters 6,7 and 10 of the ISLR).
 
-The lisence is CC-BY-NC-ND.
+There is a folder named ISLR where you find figures from the book used in the Rmd, and these are downloaded from http://faculty.marshall.usc.edu/gareth-james/ISL/data.html
+and are of cause not my work.
+
+The lisence is CC-BY-NC-ND (except for figures not created by me)
 
 Please create an issue if you find errors or inconsitencies.
 
