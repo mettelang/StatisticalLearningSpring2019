@@ -1,0 +1,153 @@
+---
+subtitle: "Spring 2019"
+title: "TMA4268 Statistical Learning"
+author: "Mette Langaas, Department of Mathematical Sciences NTNU"
+date: "10.06.2019"
+output: #3rd letter intentation hierarchy
+  html_document:
+    toc: true
+    toc_float: true
+#   pdf_document:
+#    toc: true
+#    toc_depth: 2
+#  beamer_presentation:
+###    incremental: true # or >* for one at a time
+---
+
+Report errors in material, broken links etc to <Mette.Langaas@ntnu.no>. 
+<!-- This will not only benefit you - but also your fellow students! -->
+
+# Aim
+
+This is an overview of learning material in the course [TMA4268 Statistical learning](https://wiki.math.ntnu.no/tma4268) given at the [Department of Mathematical Sciences](https://www.ntnu.edu/imf) at [NTNU](https://www.ntnu.edu/). [Course description with formal information](https://www.ntnu.edu/studies/courses/TMA4268#tab=omEmnet).
+
+<!-- Blackboard (Bb) is the chosen electronic learning system at NTNU, and in this course we use Bb for giving messages and handing in the compulsory exercises, and the course pages in Bb contains additional information on the running of the course (dates for lectures and exercises). _However, all written learning resources are available here (outside Bb)_. -->
+
+<!-- [Link to open Bb page.](https://ntnu.blackboard.com/webapps/blackboard/execute/modulepage/view?course_id=_13797_1&cmp_tab_id=_73209_1&mode=view) -->
+
+# Textbook
+
+James et al: Introduction to Statistical Learning, with Applications in R. The textbook can be downloaded here:
+<https://www-bcf.usc.edu/~gareth/ISL/>
+
+The ebook an also be downloaded from Springer: <https://www.springer.com/gp/book/9781461471370>
+(NB, need to be on NTNU network or via vpn.)
+
+Springer sells a black/white version cheap (from the website), and a (more costly) colour version is available at Akademika.
+
+There are 15 hours of youtube videos by two of the authors of the book, Trevor Hastie an Rob Tibshirani -the inventors of statistical learning - all links here: <https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/>
+
+
+
+# Module pages
+
+These are links to (html-versions of) module pages in TMA4268 Statistical learning for the spring semester of 2019 at NTNU. (To see .Rmd and .pdf just use in place of .html for most of the module pages). 
+Links are updated weekly (one new module will be active for each week).
+
+An overview with dates and all files together: [2019 table with dates for course activity](https://www.math.ntnu.no/emner/TMA4268/2019v/table2019.html)
+
+1. [Introduction](https://www.math.ntnu.no/emner/TMA4268/2019v/1Intro/1Intro.html)
+2. [Statistical learning](https://www.math.ntnu.no/emner/TMA4268/2019v/2StatLearn/2StatLearn.html) 
+3. [Linear regression](https://www.math.ntnu.no/emner/TMA4268/2019v/3LinReg/3LinReg.html)
+4. [Classification](https://www.math.ntnu.no/emner/TMA4268/2019v/4Classif/4Classif.html)
+5. [Resampling methods](https://www.math.ntnu.no/emner/TMA4268/2019v/5Resample/5Resample.html)
+6. Linear model selection and regularization: [first lecture](https://www.math.ntnu.no/emner/TMA4268/2019v/6selreg/selection_regularization_presentation_lecture1.html) and [second lecture](https://www.math.ntnu.no/emner/TMA4268/2019v/6selreg/selection_regularization_presentation_lecture2.html)
+7. [Moving beyond linearity](https://www.math.ntnu.no/emner/TMA4268/2019v/7BeyondLinear/7.html) 
+8. [Tree-based methods](https://www.math.ntnu.no/emner/TMA4268/2019v/8Trees/8Trees.html)
+9. [Support vector machines](https://www.math.ntnu.no/emner/TMA4268/2019v/9SVM/9SVM.html)
+10. Unsupervised learning. [Lecture 1](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/unsupervised_learning_presentation_lecture1.html) with [Lab1](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/1-unsupervised_learning_code_lab1.html) and [New York times stories](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/2-unsupervised_learning_code_nyt_stories.html). [Lecture 2](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/unsupervised_learning_presentation_lecture2.html) with [Lab2](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/3-unsupervised_learning_code_lab2.html) and [Lab3](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/4-unsupervised_learning_code_lab3.html) and also extra material on the [PCA](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/PCA.html) (due to many questions on rank for Compulsory 2)
+11. [Neural networks](https://www.math.ntnu.no/emner/TMA4268/2019v/11Nnet/11Nnet.html)
+12. [Final](https://www.math.ntnu.no/emner/TMA4268/2019v/12Final/12Final.html)
+
+# Exam
+
+## 2019
+
+Digital exam in Inspera.
+
+* [Problem set](https://www.math.ntnu.no/emner/TMA4268/Exam/V2019e.pdf) 
+* [Tentative solutions](https://www.math.ntnu.no/emner/TMA4268/Exam/e2019sol.html) 
+* [Grading document](https://www.math.ntnu.no/emner/TMA4268/Exam/gradingdocumentV2019.pdf)
+
+## 2018
+
+* Problem set: [English](https://www.math.ntnu.no/emner/TMA4268/Exam/V2018e.pdf) [Bokmål](https://www.math.ntnu.no/emner/TMA4268/Exam/V2018b.pdf)
+[Nynorsk](https://www.math.ntnu.no/emner/TMA4268/Exam/V2018n.pdf)
+* [Tentative solutions](https://www.math.ntnu.no/emner/TMA4268/Exam/e2018sol.pdf) 
+* [Grading document](https://www.math.ntnu.no/emner/TMA4268/Exam/gradingdocumentV2018.pdf)
+
+### Exams from course using the same textbook
+
+* STK2100 Maskinlæring og statistiske metoder for prediksjon og klassifikasjon UiO V2017: [exam problems](https://www.math.ntnu.no/emner/TMA4268/Exam/STK21002017wcomm.pdf), [solutions](https://www.math.ntnu.no/emner/TMA4268/Exam/stk2100_2017_fasit.pdf)
+* STK2100 Maskinlæring og statistiske metoder for prediksjon og klassifikasjon UiO V2018: [exam problems](https://www.math.ntnu.no/emner/TMA4268/Exam/STK2100_2018oppgmedkommentarer.pdf), [solutions](https://www.math.ntnu.no/emner/TMA4268/Exam/STK2100_2018fasitmedkommentarer.pdf)
+
+# Compulsory exercises
+
+* Modules 2-5: [Compulsory1](https://www.math.ntnu.no/emner/TMA4268/2019v/Compulsory1.html) and [Short solutions](https://www.math.ntnu.no/emner/TMA4268/2019v/CompEx/Compulsory1withLF.html) 
+* Modules 6-11: [Compulsory2](https://www.math.ntnu.no/emner/TMA4268/2019v/Compulsory2.html) and [Short solutions](https://www.math.ntnu.no/emner/TMA4268/2019v/CompEx/Compulsory2withLF.html) 
+
+See the [pages for 2018](https://www.math.ntnu.no/emner/TMA4268/2018v/TMA4268overview.html) for Compulsory exercises given in 2018.
+
+# Solutions to recommended exercises and problems on interactive lectures
+
+The recommended exercises are found in each of the module pages (mainly in the end of the pages).
+
+2. Statistical learning [M2](https://www.math.ntnu.no/emner/TMA4268/2019v/2StatLearn/2RecEx-sol.html)
+3. Linear regression [M3](https://www.math.ntnu.no/emner/TMA4268/2019v/3LinReg/3LinReg-sol.html)
+4. Classification [M4](https://www.math.ntnu.no/emner/TMA4268/2019v/4Classif/4Classif-sol.html)
+5. Resampling [M5](https://www.math.ntnu.no/emner/TMA4268/2019v/5Resample/5Resample-sol.pdf)
+6. Linear model selection and regularization [M6](https://www.math.ntnu.no/emner/TMA4268/2019v/6selreg/selection_regularization_recommended_exercises.html)
+7. Moving beyond linearity [M7](https://www.math.ntnu.no/emner/TMA4268/2019v/7BeyondLinear/7sol.html), and [IL-problem session M6+7](https://www.math.ntnu.no/emner/TMA4268/2019v/7BeyondLinear/7il.html) with [IL-solutions](https://www.math.ntnu.no/emner/TMA4268/2019v/7BeyondLinear/7ilsol.html)
+8. Tree-based methods [M8](https://www.math.ntnu.no/emner/TMA4268/2019v/8Trees/8Trees-sol.html)
+9. Support vector machines: [M9](https://www.math.ntnu.no/emner/TMA4268/2019v/9SVM/9SVM-sol.html) and [IL-problem session M8+9](https://www.math.ntnu.no/emner/TMA4268/2019v/9SVM/89il.html) with [IL-solutions](https://www.math.ntnu.no/emner/TMA4268/2019v/9SVM/89il-sol.html) 
+10. Unsupervised methods [M10](https://www.math.ntnu.no/emner/TMA4268/2019v/10unsuper/unsupervised_learning_recommended_exercises.html)
+11. Neural networks [M11](https://www.math.ntnu.no/emner/TMA4268/2019v/11Nnet/11Nnet-sol.html)
+
+# Introductions to R 
+
+* [Rbeginner](https://www.math.ntnu.no/emner/TMA4268/2019v/1Intro/Rbeginner.html)
+* [Rintermediate](https://www.math.ntnu.no/emner/TMA4268/2019v/1Intro/Rintermediate.html)
+* [Rintermediate with solutions](https://www.math.ntnu.no/emner/TMA4268/2019v/1Intro/Rintermediate-sol.html)
+* Other resources using learnR (interactive tutorials hosted on servers)
+    + [Data basics, R for Data Science 5.1](https://jjallaire.shinyapps.io/learnr-tutorial-01-data-basics/)
+    + [Filtering data, R for Data Science 5.2](https://jjallaire.shinyapps.io/learnr-tutorial-03a-data-manip-filter/)
+    + [Create new variables, R for Data Science 5.5](https://jjallaire.shinyapps.io/learnr-tutorial-03b-data-manip-mutate/)
+      + [Summarize data, R for Data Science 5.6](https://jjallaire.shinyapps.io/learnr-tutorial-03c-data-manip-summarise/)
+* Do you already know R? This is a good check of your coding skills (learnR interactive tutorial):
+      + [Programming Basics](https://tutorials.shinyapps.io/04-Programming-Basics/)
+
+
+# Connections to other statistics courses at IMF/NTNU
+
+**Nice to have both before, after and at the same time as TMA4268:**
+
+* (V)[TMA4267 Linear statistical models](https://www.math.ntnu.no/emner/TMA4267) Multiple linear regression. Analysis of variance. Experimental design. Multivariate normal distribution. Multiple testing. 
+* (V)[TMA4180 Optimization 1](https://www.ntnu.edu/studies/courses/TMA4180). 
+First and second order necessary and sufficient (Karush-Kuhn-Tucker) optimality conditions for unconstrained and constrained optimization problems in finite-dimensional vector spaces. Basics of convex analysis and Lagrangian duality theory and their application to optimization problems and algorithms. An overview of modern optimization techniques and algorithms for smooth problems (including line-search/trust-region, quasi-Newton, interior point and active set methods, SQP and augmented Lagrangian approaches). Basic derivative-free and non-smooth optimization methods.
+
+**Expanding on topics mentioned in TMA4268**
+
+* (V)[TMA4250 Spatial statistics](http://www.ntnu.no/studier/emner/TMA4250). 
+Parameter estimation, simulation and applications of Gaussian random fields, point fields and 
+discrete Markov random fields. Examples from image analysis, and environmental and natural 
+resource applications. 
+* (V)[TMA4275 Lifetime analysis](http://www.ntnu.no/studier/emner/TMA4275/). 
+Basic concepts in lifetime modelling. Censored observations. Nonparametric estimation and 
+graphical plotting for lifetime data (Kaplan-Meier, Nelson-plot). Estimation and testing in 
+parametric lifetime distributions. Analysis of lifetimes with covariates (Cox-regression, accelerated lifetime testing). Modelling and analysis of recurrent events. Nonhomogeneous Poisson-processes. Nelson-Aalen estimators. 
+* (H)[TMA4285 Time series models ](http://www.ntnu.no/studier/emner/TMA4285/) 
+Autoregressive and moving average based models for stationary and non-stationary time series. Parameter estimation. Model identification. Forecasting. ARCH and GARCH models for volatility. State space models (linear dynamic models) and the Kalman filter. 
+* (H)[TMA4295 Statistical inference](http://www.ntnu.no/studier/emner/TMA4295/). 
+Transformations and moments of random variables. Families of distributions. Inequalities and convergence theorems. Sufficient statistics. Frequentist and Bayesian estimators. Methods of constructing point estimators, interval estimators and hypothesis tests, and optimality of these. Asymptotic properties of estimators and hypothesis tests. 
+* (V)[TMA4300 Computational statistics](http://www.ntnu.no/studier/emner/TMA4300/). 
+Classical and Markov chain methods for stochastic simulation. Hierarchical Bayesian models and inference in these. The expectation maximisation (EM) algorithm. Bootstrapping, cross-validation and non-parametric methods. 
+* (H)[TMA4315 Generalized linear models](http://www.ntnu.no/studier/emner/TMA4315/). 
+Univariate exponential family. Multiple linear regression. Logistic regression. Poisson regression. General formulation for generalised linear models with canonical link. Likelihood-based inference with score function and expected Fisher information. Deviance. AIC. Wald and likelihood-ratio test. Linear mixed effects models with random components of general structure. Random intercept and random slope. Generalised linear mixed effects models. Strong emphasis on programming in R. Possible extensions: quasi-likelihood, over-dispersion, models for multinomial data, analysis of contingency tables, quantile regression.
+
+**PhD courses**
+
+* (H)[MA8704 Asympotic methods](http://www.ntnu.no/studier/emner/MA8701/) every autumn. Requires TMA4295.
+* (V)[MA8701 General statistical methods](http://www.ntnu.no/studier/emner/MA8701/) next time spring of 2019. We go in more detail into related topics to TMA4268. Requires TMA4295 and TMA4300. Nice to have TMA4180, TMA4285 and TMA4315.
+* (V)[MA8702 Computational statistics 2](http://www.ntnu.no/studier/emner/MA8702/) next time spring of 2020. Requires TMA4300 and TMA4250.
+
+

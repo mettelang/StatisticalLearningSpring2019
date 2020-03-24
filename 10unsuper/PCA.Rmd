@@ -1,0 +1,296 @@
+---
+title: "TMA4268 Statistical Learning V2019"
+subtitle: "Module 6 and 10: Details on principal component analysis"
+author: "Elisabeth Hetlelid, Michail Spitieris and Mette Langaas, Department of Mathematical Sciences, NTNU"
+date: "April 2019"
+output: #3rd letter intentation hierarchy
+#  beamer_presentation:
+  #    keep_tex: true
+###    incremental: true # or >* for one at a time
+  html_document:
+    toc: true
+#    toc_float: true
+    fig_caption: true
+  # pdf_document
+bibliography: ref.bib
+nocite: |
+  @AppliedMultivariateStatisticalAnalysis2007, @DataViz, @PCAReventDev2016
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,tidy=TRUE,message=FALSE,warning=FALSE)
+showsol=FALSE
+```
+
+<!-- rmarkdown::render("12Final.Rmd","all",encoding="UTF-8") -->
+<!-- rmarkdown::render("12Final.Rmd","beamer_presentation",encoding="UTF-8",output_file="12FinalBEAMER.pdf") -->
+
+(10.04: minor corrections, 04.04: first version)
+
+# Principal component analysis
+
+Dimension reduction is a set of techniques used to reduce dimension and increase interpretability. This means looking for a subset or a new set of variables to try to interpret elements of a data set. 
+
+Assume we study a data set with $n$ observations of $p$ variables with $n > p$ (see below under Rank for the case when that is not true). The idea behind PCA is to create a new set of fewer variables in order to increase interpretability. This is also known as dimension reduction. The new variables (called principal components, PCs) are created by finding linear combinations of the original variables. 
+
+* The first principal component (PC1) is chosen to be the linear combination that has the largest variance within our data. 
+* The second principal component (PC2) is then chosen as the linear combination of the original variables that has the second largest variance and is uncorrelated with PC1 and 
+* so on for the up to $p$ possible principal components. 
+
+The hope is that by constructing the principal components most of the variability in the data can be captured by only a handful of them instead of a very large number of original variables.
+
+# Formal derivation 
+
+We define a $p \times 1$ random vector ${\bf Z}^T = [Z_1, Z_2, \dots, Z_p]$. 
+
+Let $\text{Cov}({\bf Z})=\mathbf{\Sigma}$ with associated 
+
+* eigenvalues $\lambda_j$ and 
+* eigenvectors $\mathbf{e}_j$ , where 
+
+$\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_p \geq 0$. 
+
+In our derivation of the principal components we choose to follow @AppliedMultivariateStatisticalAnalysis2007, Chapter 7.8. 
+
+A linear combination of explanatory variables can be represented as $W_j = \sum_{l=1}^{p} a_{lj} Z_l = \mathbf{a}_j^T{\bf Z}$. Our goal is to find $\mathbf{a}_j$ such that the variance of $\mathbf{a}_j^T{\bf Z}$ is maximized.
+ 
+\begin{equation}
+        \text{Var}(W_j) = \text{Var}(\mathbf{a}_j^T{\bf Z}) = \text{Var}(\mathbf{a}_j^T{\bf Z}) = \mathbf{a}_j^T\text{Var}({\bf Z})(\mathbf{a}_j^T)^T = \mathbf{a}_j^T \mathbf{\Sigma} \mathbf{a}_j.
+        \label{var}
+\end{equation}
+
+We also want our PCs to be uncorrelated and calculate the covariance between two of our linear combinations as
+
+\begin{equation}
+    \text{Cov}(W_j, W_k) = \mathbf{a}_j^T \mathbf{\Sigma} \mathbf{a}_k \text{  where  } j,\hspace{0.5mm}k = 1,2,\dots,p.
+    \label{Cov}
+\end{equation}
+ 
+We want our first principal component to be the linear combination $W_1$ with the largest variance. One may see that finding the maximum of the above equation is not well defined since we can increase the variance of $W_j$ by multiplying our coefficient vector by a constant. Therefore we add an additional constraint, defining $\mathbf{a}_j$ to be of unit length.
+
+With our new restriction added we want to solve the following problem for the $j$th PC,
+ 
+\begin{equation}
+    \begin{split}
+    W_j &= \mathbf{a}_j^T{\bf Z} \text{ s.t it maximizes }\text{Var}(\mathbf{a}_j^T{\bf Z}) \\ &
+    \text{subject to } \mathbf{a}_j^T\mathbf{a}_j=1 \text{ and Cov}(\mathbf{a}_j^T{\bf Z},\mathbf{a}_k^T{\bf Z})=0\text{ for } k<j.
+\end{split}
+\label{PC_Wi}
+\end{equation}
+ 
+Another way to look at this problem is by using a Lagrange multiplier to impose the new constraint as done by @PCAReventDev2016. With that approach one can then see by differentiation that our coefficient vector becomes the eigenvectors of the covariance matrix, i.e. $\mathbf{a}_i = \mathbf{e}_i$. 
+
+The proof may be found in @AppliedMultivariateStatisticalAnalysis2007, page 432. This gives the following expression for the $j$th principal component,
+ 
+\begin{equation}
+    W_j = \mathbf{e}_j^T{\bf Z}.
+    \label{Wi}
+\end{equation}
+ 
+We refer to $W_j$ as the score and $\mathbf{e}_j^T$ as the vector of loadings for the $j$th principal component.
+
+# Properties
+We want the principal components to capture as much as possible of the total variance in the original data, and proceed to calculate the variance of a principal component. 
+
+The total variance of a random vector is defined as the sum of the variance of each element of the vector, $\text{Var}({\bf Z})=\sum_{j=1}^p \text{Var}(Z_j)$. 
+
+We also want to check that the principal components are in fact uncorrelated. 
+\begin{equation}
+    \text{Var}(W_j) = \mathbf{a}_j^T \mathbf{\Sigma} \mathbf{a}_j = \mathbf{e}_j^T \mathbf{\Sigma} \mathbf{e}_j = \lambda_j
+    \label{varLambda}
+\end{equation}
+and
+\begin{equation}
+    \text{Cov}(W_j, W_k) = \mathbf{a}_j^T \mathbf{\Sigma} \mathbf{a}_k = \mathbf{e}_j^T \mathbf{\Sigma} \mathbf{e}_k = 0,\hspace{1mm} j\neq k.
+    \label{cov0}
+\end{equation}
+ 
+For both equation we used that $\mathbf{\Sigma}\mathbf{e}_j=\lambda_i\mathbf{e}_j$. 
+
+Next we use the orthogonality of eigenvectors
+ 
+\begin{equation*}
+    \mathbf{e}_j^T\mathbf{e}_k = \begin{cases} 1, \hspace{1mm} \text{for }j=k \\ 0, \text{ for }j \neq k \end{cases}.
+\end{equation*}
+ 
+From these results we see that the principal components are uncorrelated and have variance equal to the eigenvalues of $\mathbf{\Sigma}$. 
+
+The idea of using principal components is that we would like to replace the $p$ original variables with $m < p$ principal components with limited loss of information and possible gain in interpretation. 
+
+The proportion of total variance explained by principal component $j$ is
+
+\begin{equation}
+    \frac{\lambda_j}{\sum_{l=1}^p \lambda_l} \text{ for } j=1,\dots p.
+    \label{propVar}
+\end{equation}
+
+Here @AppliedMultivariateStatisticalAnalysis2007 uses spectral decomposition to show that the total variance equals $\sum_{j=1}^p \lambda_j$. Further the proportion of total variance explained by the $j$ first principal components will therefore be,
+
+\begin{equation*}
+    \frac{\sum_{i=1}^j \lambda_i}{\sum_{k=1}^p \lambda_k}.
+\end{equation*}
+
+When applying PCA to a dataset one will often look at the cumulative proportion of variance explained to help select the number of principal components to be used.
+
+
+# Standardization
+
+Until now we have looked at non-standardized data. This will not always give the desired results as the variables $Z_i$ may have different measurement units that can not be compared or that the ranges of the variables (their variances) are very different. This will impact the resulting principal components greatly as the weighting given to the different variables is a result of different units or ranges. 
+
+Standardization of the variables means that 
+
+* for each $Z_i$ in ${\bf Z}$ we want to have
+* mean zero and a variance of one. 
+
+The covariance of a random vector is not scale invariant and it follows from the standardization of ${\bf Z}$ that the covariance matrix equals the correlation matrix. 
+
+As the correlation matrix and the covariance matrix of a non-standardized random vector are not equal they will have different eigenvectors and eigenvalues which will result in different principal components. 
+
+Using the same approach as for the total variance as above for the correlation matrix we get that the proportion of total variance explained by the $j$th principal component is
+ 
+\begin{equation*}
+    \frac{\lambda_j}{p} \text{ for } j=1,\dots p,
+\end{equation*}
+ 
+when the variables are standardized. We see that the denominator is $p$ as the correlation matrix has $1$ along the diagonal and is a $p \times p$ matrix, i.e. the trace, sum of the diagonal, will be $p$.
+
+Let us assume that we either work with raw data or standardized data, and use the covariance matrix of these data further. 
+
+In principal component analysis we use the eigenvectors and eigenvalues of the covariance matrix. It is worth noting that the number of non-zero eigenvalues and therefore the number of useful principal components are connected to the rank of the covariance matrix. The name "useful principal components" comes from the result on the variance of the principal components where we see that an eigenvalue of zero means that the principal component does not explain any of the total variance in the data. 
+
+
+# Sample principal components
+
+Further we will proceed to look at principal components created based on a random sample. We now assume our random sample consists of $n$ measurements of our $p$ variables. For simplicity we will assume that $n>>p$ such that the sample covariance will have rank $p$, but see below for when $p\le n$.
+
+Further more we assume that ${\bf Z}_i$ has mean $\text{E}({\bf Z}_i)=\mu$ and covariance matrix $\text{Cov}({\bf Z}_i)=\mathbf{\Sigma}$ for all $i=1,\dots,n$. 
+
+From the random sample we need to estimate the mean vector and covariance matrix which will be used to create the principal components. We estimate the mean vector by
+
+\begin{equation*}
+     \bar{{\bf Z}} = \frac{1}{n}\sum_{i=1}^n {\bf Z}_i,
+\end{equation*}
+and the sample covariance matrix by
+
+\begin{equation*}
+    \mathbf{S} = \frac{1}{n-1}\sum_{i=1}^n \left( {\bf Z}_i -  \bar{{\bf Z}} \right)\left( {\bf Z}_i -  \bar{{\bf Z}} \right)^T.
+\end{equation*}
+If our ${\bf Z}$ is centered this is reduced to
+
+\begin{equation*}
+    \mathbf{S} = \frac{1}{n-1}\sum_{i=1}^n {\bf Z}_i{\bf Z}_i^T,
+\end{equation*}
+
+as $\bar{{\bf Z}}=0$. We find the principal components in a similar way as we did before but now we replace $\mathbf{\Sigma}$ by $\mathbf{S}$ and proceed as before.
+
+Comment: If we let ${\bf Z}^*$ be a $n \times p$ matrix where the rows are the centered version of ${\bf Z}_i$, then the covariance matrix can be estimated by $(n-1)\mathbf{S}={\bf Z}^{*T}{\bf Z}^*$. 
+
+We refer to $\mathbf{W}_m = [w_{1m}, \dots, w_{nm}]^T$ as the scores and $\mathbf{e}_m=[e_{1m},\dots, e_{pm}]^T$ as the loadings of the mth principal component. 
+
+Rewriting to matrix notation we get that all principal component scores are given by
+\begin{equation}
+    \mathbf{W}={\bf Z}\mathbf{Q},
+    \label{scores_matrix}
+\end{equation}
+where $\mathbf{Q}$ is the matrix containing the vectors of loadings as columns, i.e. an orthonormal matrix containing eigenvectors of the covariance matrix as columns.
+
+# Rank — what happens if $n\le p$?
+
+We know that the rank of an $n \times p$ matrix is $\leq \min(n,p)$. However if we center the matrix by columns this changes and becomes $\leq \min(n-1,p)$, since now the sum of each column will be zero. Why is centering of interest? 
+
+We are interested in the principal components and find them as eigenvectors of the sample covariance matrix. The sample covariance matrix $\mathbf{S}$ can be written as 
+$(n-1)\mathbf{S}={\bf Z}^{*T}{\bf Z}^*$, where ${\bf Z}^*$ is our column-centered matrix. 
+
+From mathematics it is known that if ${\bf Z}^*$ has rank $m$ then ${\bf Z}^{*T}{\bf Z}^*$ will also have rank $m$, and if our column-centered $n\times p$ has rank $\le n-1$, then the sample covariance matrix must also have rank $\le n-1$. So, we will have at most $n-1$ principal components. 
+
+Also, if $n>p$ but the $p$ varibles are linearly dependent, the rank of the covariance matrix of ${\bf Z}$ will not be $p$, but a lower value, and we will have less than $p$ principal components.
+
+```{r}
+library(Matrix)
+n=10
+p=100
+Z=matrix(rnorm(1000),n,p)
+Zstar=scale(Z)
+rankMatrix(Z)
+rankMatrix(Zstar)
+```
+
+The sample covariance matrix of is given by
+
+\begin{equation*}
+    \mathbf{S} = \frac{1}{n-1}\sum_{i=1}^n \left( {\bf Z}_i -  \bar{{\bf Z}} \right)\left( {\bf Z}_i -  \bar{{\bf Z}} \right)^T,
+\end{equation*}
+
+after standardization each variable $\bf Z_j,$  $j=1,\cdots, p$ has mean zero or equivalently $\bar{{\bf Z}} = 0_{p\times 1}.$ The covariance matrix can be written in the following form
+
+\begin{equation*}
+    \mathbf{C} = \frac{1}{n-1}\sum_{i=1}^n {\bf Z}_i {\bf Z}_i^T,
+\end{equation*}
+
+We have that $\bar{{\bf Z}}=\frac{1}{n}\sum_{i=1}^n{\bf Z}_i=0,$ consequently $\sum_{i=1}^n{\bf Z}_i=0_{p\times1}.$ 
+The last result shows that ${\bf Z}_i$ are not independent, beacause if we know ${\bf Z_1, Z_2,\cdots, Z_{n-1}}$ then  ${\bf Z}_n = -\sum_{i=1}^{n-1}{\bf Z}_i.$ 
+
+Now we can rewrite the covariance matrix in the following form
+
+\begin{equation*}
+    \mathbf{C} = \frac{1}{n-1}\sum_{i=1}^n {\bf Z}_i {\bf Z}_i^T= 
+    \frac{1}{n-1}\sum_{i=1}^{n-1} {\bf Z}_i {\bf Z}_i^T + \left(  -\sum_{i=1}^{n-1}{\bf Z}_i \right) {\bf Z}_n^T =
+    \frac{1}{n-1}\sum_{i=1}^{n-1} {\bf Z}_i({\bf Z}_i - {\bf Z}_n)^T
+    
+\end{equation*}
+ 
+Having $n-1$ terms left, it is clear that the rank is at most $n-1$ when $n\le p.$
+
+# Singular value decomposition
+It is worth noting that the principal components may be written out using the matrices obtained by the singular value decomposition (SVD) of the $n \times p$ matrix ${\bf X}$. (We use ${\bf X}$, here, and we really think of the column-centered matrix ${\bf Z}^*$.)
+
+Denote the rank of the matrix ${\bf X}$ by $\mathrm{rank}({\bf X})=r\leq\min(n,p)$. 
+
+SVD is a decomposition of a matrix ${\bf X}$ into a product of three matrices, 
+$${\bf X}={\bf U}{\bf D}{\bf V}^T$$ 
+
+
+The decomposition of ${\bf X}$ consists of 
+
+* the $n \times r$ matrix ${\bf U}$ containing the eigenvectors of ${\bf X}{\bf X}^T$ as columns, 
+* the diagonal $r \times p$ matrix ${\bf D}$ containing the non-zero singular values of ${\bf X}$ and 
+* the $r \times p$ matrix ${\bf V}$ which contains the eigenvectors of ${\bf X}^T{\bf X}$ as columns. 
+
+Note that the singular values of ${\bf X}$ equals $\sqrt{\mathrm{eigenvalues}({\bf X}{\bf X}^T)}=\sqrt{\mathrm{eigenvalues}({\bf X}^T{\bf X})}$. 
+
+The proof that the eigenvalues of ${\bf X}{\bf X}^T$ and ${\bf X}^T{\bf X}$ are identical is as follows
+
+\begin{align*}
+        {\bf X}^T{\bf X} \mathbf{e} &= \lambda \mathbf{e} \\
+        {\bf X}{\bf X}^T{\bf X} \mathbf{e} &= \lambda {\bf X} \mathbf{e}\\
+        {\bf X}{\bf X}^T \mathbf{e}^* &= \lambda \mathbf{e}^*.
+\end{align*}
+
+This shows that 
+
+* the eigenvalues of ${\bf X}^T{\bf X}$ and ${\bf X}{\bf X}^T$ are equal and that 
+* the eigenvectors of ${\bf X}{\bf X}^T$ equals ${\bf X}\mathbf{e}$ where $\mathbf{e}$ are the eigenvectors of ${\bf X}^T{\bf X}$.
+
+Next we recognize that for _a column centered matrix_ ${\bf X}$ we have that the covariance matrix is estimated by $(n-1)\mathbf{S}={\bf X}^T{\bf X}$. 
+
+As the constant $n-1$ only affects the eigenvalues of $\mathbf{S}$ we can see that the matrix $\mathbf{Q}$ from contains the same values as ${\bf V}$ from the singular value decomposition, i.e. the eigenvalues of the covariance matrix $\mathbf{S}$. 
+
+Therefore one may rewrite the principal components as $\mathbf{W} = {\bf X}{\bf V} = {\bf U}{\bf D}{\bf V}^T{\bf V} = {\bf U}{\bf D}$.
+ 
+# Score and loadings
+
+## Score plots
+
+Now that the principal components are calculated one may use them in several ways. Some popular uses are in score plots, in loading plots or for use as new covariates in regression. For regression one may select $m<p$ principal components to be the variables in the regression. 
+
+Looking at score plots may give a good indication of relationships within the data. A score plot is created by plotting two principal component scores against each other, e.g. plotting the score values of PC1 on the horizontal axis and of PC2 on the vertical axis. By doing so we transform our $p$ dimensional data into two dimensions, i.e. plotting the projected points. 
+
+As $\mathbf{Q}$ is an orthonormal matrix we have that any relationship found in ${\bf Z}$ is also found in $\mathbf{W}$ @DataViz, Chapter 6.5.6. Finding similarities within a large set of raw data may be difficult. However within the principal components similar rows (observations in our dataset) will be clustered together with similar score values @DataViz, Chapter 6.5.6. Looking at score plots we try to find clusterings and outliers within the data. Color is often used in order to get a more informative plot. This may be giving different colors to some predefined groups within the data.
+
+## Interpreting loadings
+
+Further one can interpret the loadings of the principal components, which are contained in the matrix $\mathbf{Q}$. 
+
+Loading plots show which features contribute to the different principal components. If the features are highly correlated they will get similar weights. This may be seen for latent variable models where the measures are a combination of the latent variables and therefore highly correlated @DataViz, Chapter 6.5.7. Further one may also look for variables with low weights across the principal components as these often can be removed.
+
+# References

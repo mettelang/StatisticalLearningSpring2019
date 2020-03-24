@@ -1,0 +1,105 @@
+\contentsline {section}{Introduction}{2}{section*.2}
+\contentsline {subsection}{Aims of the module}{2}{section*.3}
+\contentsline {subsection}{Learning material for this module}{3}{section*.4}
+\contentsline {subsection}{To be added after the lecture}{3}{section*.5}
+\contentsline {section}{What is statistical learning?}{3}{section*.6}
+\contentsline {subsection}{Variable types}{3}{section*.7}
+\contentsline {subsection}{Examples of learning problems}{3}{section*.8}
+\contentsline {subsubsection}{Economy:}{3}{section*.9}
+\contentsline {subsubsection}{Medicine 1:}{4}{section*.10}
+\contentsline {subsubsection}{Medicine 2:}{4}{section*.11}
+\contentsline {subsubsection}{Handwritten digit recognition:}{4}{section*.12}
+\contentsline {subsubsection}{Email classification (spam detection):}{6}{section*.13}
+\contentsline {subsubsection}{What makes a Nobel Prize winner?}{6}{section*.14}
+\contentsline {subsubsection}{Q: Were there common underlying aims and elements of these examples of statistical learning?}{8}{section*.15}
+\contentsline {subsubsection}{A:}{8}{section*.16}
+\contentsline {subsection}{What is the aim in statistical learning?}{8}{section*.17}
+\contentsline {subsection}{Prediction}{8}{section*.18}
+\contentsline {subsubsection}{Q: If there were a \emph {deterministic} relationship between the response and a set of predictors, would there then be both reducible and irreducible error?}{9}{section*.19}
+\contentsline {subsubsection}{A:}{9}{section*.20}
+\contentsline {subsection}{Inference}{9}{section*.21}
+\contentsline {subsection}{The difference between statistical learning and machine learning}{9}{section*.22}
+\contentsline {subsection}{Naming convention}{10}{section*.23}
+\contentsline {subsection}{Regression and classification}{11}{section*.24}
+\contentsline {subsubsection}{Q:}{11}{section*.25}
+\contentsline {subsubsection}{A:}{11}{section*.26}
+\contentsline {section}{Supervised and unsupervised learning}{11}{section*.27}
+\contentsline {subsection}{Supervised learning}{11}{section*.28}
+\contentsline {subsection}{Unsupervised learning}{12}{section*.29}
+\contentsline {subsection}{Semi-supervised learning}{12}{section*.30}
+\contentsline {subsubsection}{Q:}{12}{section*.31}
+\contentsline {section}{Models and methods}{12}{section*.32}
+\contentsline {subsection}{Parametric Methods}{12}{section*.33}
+\contentsline {subsection}{Non-parametric methods}{13}{section*.34}
+\contentsline {subsubsection}{Q: What are advantages and disadvantages of parametric and non-parametric methods?}{13}{section*.35}
+\contentsline {subsubsection}{A: Parametric methods}{13}{section*.36}
+\contentsline {subsubsection}{A: Non-parametric methods}{13}{section*.37}
+\contentsline {section}{Prediction accuracy vs.\nobreakspace {}interpretability}{13}{section*.38}
+\contentsline {subsection}{Polynomial regression example}{14}{section*.39}
+\contentsline {subsection}{Loss function}{18}{section*.40}
+\contentsline {subsection}{Assessing model accuracy - and quality of fit}{18}{section*.41}
+\contentsline {subsection}{Training MSE}{19}{section*.42}
+\contentsline {subsection}{Test MSE}{20}{section*.43}
+\contentsline {section}{The Bias-Variance trade-off}{24}{section*.44}
+\contentsline {subsubsection}{Polynomial example (cont.)}{26}{section*.45}
+\contentsline {subsubsection}{Choosing the best model: observations}{28}{section*.46}
+\contentsline {section}{Classification}{29}{section*.47}
+\contentsline {subsubsection}{Q: Give an example of a classification problem.}{29}{section*.48}
+\contentsline {subsubsection}{A: some examples earlier in this module, and new examples will be added to the class notes.}{29}{section*.49}
+\contentsline {subsection}{Synthetic example}{30}{section*.50}
+\contentsline {subsection}{Training error rate}{30}{section*.51}
+\contentsline {subsection}{Test error rate}{31}{section*.52}
+\contentsline {subsection}{Bayes classifier}{31}{section*.53}
+\contentsline {subsection}{K-nearest neighbour classifier}{31}{section*.54}
+\contentsline {subsection}{The curse of dimensionality}{33}{section*.55}
+\contentsline {subsection}{What was important in Part A?}{34}{section*.56}
+\contentsline {section}{Random vector}{34}{section*.57}
+\contentsline {subsection}{Moments}{34}{section*.58}
+\contentsline {subsubsection}{The Cork deposit data}{34}{section*.59}
+\contentsline {subsection}{Rules for means}{35}{section*.60}
+\contentsline {subsection}{Variance-covariance matrix}{36}{section*.61}
+\contentsline {subsubsection}{Exercise: the variance-covariance matrix}{36}{section*.62}
+\contentsline {subsubsection}{Correlation matrix}{37}{section*.63}
+\contentsline {subsubsection}{Exercise: the correlation matrix}{37}{section*.64}
+\contentsline {subsubsection}{Linear combinations}{37}{section*.65}
+\contentsline {subsubsection}{Exercise: Linear combinations}{38}{section*.66}
+\contentsline {subsubsection}{The covariance matrix - more requirements?}{38}{section*.67}
+\contentsline {subsection}{Multiple choice - random vectors}{38}{section*.68}
+\contentsline {subsubsection}{Mean of sum}{39}{section*.69}
+\contentsline {subsubsection}{Mean of linear combination}{39}{section*.70}
+\contentsline {subsubsection}{Covariance}{39}{section*.71}
+\contentsline {subsubsection}{Mean of linear combinations}{39}{section*.72}
+\contentsline {subsubsection}{Covariance of linear combinations}{39}{section*.73}
+\contentsline {subsubsection}{Correlation}{40}{section*.74}
+\contentsline {subsection}{Answers:}{40}{section*.75}
+\contentsline {section}{The multivariate normal distribution}{40}{section*.76}
+\contentsline {subsection}{The multivariate normal (mvN) pdf}{40}{section*.77}
+\contentsline {subsection}{Six useful properties of the mvN}{41}{section*.78}
+\contentsline {subsection}{Contours of multivariate normal distribution}{41}{section*.79}
+\contentsline {subsection}{Identify the 3D-printed mvNs}{42}{section*.80}
+\contentsline {subsection}{Multiple choice - multivariate normal}{42}{section*.81}
+\contentsline {subsubsection}{Multivariate normal pdf}{42}{section*.82}
+\contentsline {subsubsection}{Trivariate normal pdf}{42}{section*.83}
+\contentsline {subsubsection}{Multivariate normal distribution}{42}{section*.84}
+\contentsline {subsubsection}{Independence}{43}{section*.85}
+\contentsline {subsubsection}{Constructing independent variables?}{43}{section*.86}
+\contentsline {subsubsection}{Conditional distribution: mean}{43}{section*.87}
+\contentsline {subsubsection}{Conditional distribution: variance}{43}{section*.88}
+\contentsline {subsection}{Answers:}{44}{section*.89}
+\contentsline {section}{Plan for the introductory lecture}{44}{section*.90}
+\contentsline {section}{Recommended exercises}{44}{section*.91}
+\contentsline {subsection}{Problem 1: Reflections and practicals}{44}{section*.92}
+\contentsline {subsection}{Problem 2: Core concepts in statistical learning}{46}{section*.93}
+\contentsline {subsection}{a) Training and test MSE}{46}{section*.94}
+\contentsline {subsection}{b) Bias-variance trade-off}{49}{section*.95}
+\contentsline {subsection}{Problem 3: Theory and practice - MSEtrain, MSEtest, and bias-variance}{54}{section*.96}
+\contentsline {subsubsection}{a) Problem set-up}{54}{section*.97}
+\contentsline {subsubsection}{b) Train and test MSE}{56}{section*.98}
+\contentsline {subsubsection}{c) Bias and variance - we use the truth!}{57}{section*.99}
+\contentsline {subsubsection}{d) Repeat a-c}{58}{section*.100}
+\contentsline {section}{Exam problems}{58}{section*.101}
+\contentsline {subsection}{MCQ-type problems}{58}{section*.102}
+\contentsline {subsection}{Exam 2018 Problem 2: And important decomposition in regression}{58}{section*.103}
+\contentsline {section}{ Further reading/resources}{59}{section*.104}
+\contentsline {section}{ R packages}{59}{section*.105}
+\contentsline {section}{Acknowledgements}{59}{section*.106}
